@@ -1,0 +1,85 @@
+<div class="container">
+    <script>
+        $(function(){
+            var calcNewYear = setInterval(function(){
+                //date_future = new Date(new Date().setDate;
+                date_future = new Date();
+                date_future.setFullYear(2017, 3, 14);
+                date_future.setHours(6);
+                date_future.setMinutes(15);
+                date_future.setSeconds(0);
+                date_now = new Date();
+
+                seconds = Math.floor((date_future - (date_now))/1000);
+                minutes = Math.floor(seconds/60);
+                hours = Math.floor(minutes/60);
+                days = Math.floor(hours / 24);
+                weeks = Math.floor(days / 7);
+
+                hours = hours-(days*24);
+                minutes = minutes-(days*24*60)-(hours*60);
+                seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
+
+                $("#weeks").text(weeks);
+                $("#days").text(days);
+                $("#hours").text(hours);
+                $("#minutes").text(minutes);
+                $("#seconds").text(seconds);
+            }, 1000);
+        });
+    </script>
+    <div class="row" style="height:100%">
+        <div class="col-md-6 text-center" style="height:100%;color: white;background:rgba(71,163,218,0.8);">
+            <div class="row text-center">
+                <div class="col-md-offset-2 col-md-4 ">
+                    <div class="profile text-center center-block" style="background-color:rgba(0,0,0,0.0);">
+                        <img src="img/ProfilePaddyBlue.jpg" class="text-center" alt="profile1" style="background-color: #47a3da;"><!--style="margin-top: 20px; background-color: #47a3da;">-->
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-top:100px;">
+                    <a href="https://www.accuweather.com/en/ie/dublin/207931/weather-forecast/207931" class="aw-widget-legal"></a>
+                    <div id="awcc1488806077249" class="aw-widget-current"  data-locationkey="207931" data-unit="c" data-language="en-us" data-useip="false" data-uid="awcc1488806077249"></div>
+                    <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-center" style="height:100%;color: rgba(71,163,218,0.8);background:white;">
+            <div class="row text-center">
+                <div class="col-md-offset-2 col-md-4 ">
+                    <div class="profile text-center center-block" style="background-color: white;"><!--style="margin-top: 20px; background-color: #47a3da;">-->
+                        <img src="img/ProfileVictoriaBlue.jpg" class="text-center" alt="profile2">
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-top:100px;">
+                    <a href="https://www.accuweather.com/en/au/brisbane/24741/weather-forecast/24741" class="aw-widget-legal"></a>
+                    <div id="awcc1488806369888" class="aw-widget-current lt-216 lt-280 lt-350 lt-479" data-locationkey="24741" data-unit="c" data-language="en-us" data-useip="false" data-uid="awcc1488806369888" style="display: block;"><style type="text/css">  .aw-icon-33-t {background-image:url(https://vortex.accuweather.com/adc2010/images/icons-numbered/33-t.png)} .aw-icon-33-h {background-image:url(https://vortex.accuweather.com/adc2010/images/icons-numbered/33-h.png)} .aw-icon-33-s {background-image:url(https://vortex.accuweather.com/adc2010/images/icons-numbered/33-s.png)} .aw-icon-33-m {background-image:url(https://vortex.accuweather.com/adc2010/images/icons-numbered/33-m.png)} .aw-icon-33-l {background-image:url(https://vortex.accuweather.com/adc2010/images/icons-numbered/33-l.png)} .aw-icon-33-xl {background-image:url(https://vortex.accuweather.com/adc2010/images/icons-numbered/33-xl.png)} </style><script type="text/javascript">      var awxWidgetInfo = awxWidgetInfo || {};      awxWidgetInfo.awcc1488806369888 = {};      awxWidgetInfo.awcc1488806369888.userInfo = {      country: 'AU',          city: "Brisbane",      state: 'QLD',      metro: '',      zip: '',      fcode: 'ABBN',      partner: 'accuweather',      sessionPartner: 'accuweather',      referer: 'http://localhost:60196/Default',      lang: 'en-us',      langid: '1',      lat: '-27.47',      lon: '153.02',      dma: '',      ip: '86.47.218.36',      ipLocation: '',      sessionViews: 0,      geo_dma: '',      geo_city: '',      geo_state: '',      geo_zip: '',      geo_country: ''      };      awxWidgetInfo.awcc1488806369888.wxInfo = {      nwsalrt: '',          hdln: '',      ut: '',      cu: { wx: '', hi: '', wd: '', hd: '', uv: '' },      fc: [{wx: '', hi: '', lo: ''}],          ix: {},      mcpct: "1"        };</script><div class="aw-widget-current-inner"><div class="aw-widget-content bg-cl"><a id="link_current" href="http://www.accuweather.com/en/au/brisbane/24741/weather-forecast/24741?utm_source=localhost&amp;utm_medium=oap_weather_widget&amp;utm_term=link_current&amp;utm_content=accuweather&amp;utm_campaign=current" target="_blank" class="aw-current-weather"><div class="aw-current-weather-inner"><h3>Brisbane, AU</h3><span class="aw-icon aw-icon-33-m" data-icon="33"></span><p class="aw-temp-time-desc"><span class="aw-temperature-today"><b>21<sup>°</sup></b></span><time>2:04 am AEST</time>    				<span class="aw-weather-description">Clear</span></p></div>        		</a></div><a id="link_get_widget" href="http://www.accuweather.com/en/free-weather-widgets?utm_source=localhost&amp;utm_medium=oap_weather_widget&amp;utm_term=link_get_widget&amp;utm_content=accuweather&amp;utm_campaign=current" target="_blank" class="aw-toggle"><i>Get this widget</i></a><div class="aw-get-widget-footer"><p class="aw-get-info">Want weather on your site?</p><a id="link_get_widget_footer" href="http://www.accuweather.com/en/free-weather-widgets?utm_source=localhost&amp;utm_medium=oap_weather_widget&amp;utm_term=link_get_widget_footer&amp;utm_content=accuweather&amp;utm_campaign=current" target="_blank" class="aw-get-this-widget"><i class="aw-get-widget-icon"></i><span>Get widget</span></a></div></div>  </div>
+                    <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="csvg-countdown" data-tad-control="CountdownSVG-Countdown">
+        <div class="csvg-digit">
+            <div id="weeks" class="csvg-digit-number"></div>
+            <div id="el_w1t" class="csvg-digit-label">weeks</div>
+        </div>
+        <div class="csvg-digit">
+            <div id="days" class="csvg-digit-number"></div>
+            <div id="el_dw1t" class="csvg-digit-label">days</div>
+        </div>
+        <div class="csvg-digit">
+            <div id="hours" class="csvg-digit-number"></div>
+            <div id="el_h1t" class="csvg-digit-label">hours</div>
+
+        </div>
+        <div class="csvg-digit">
+            <div id="minutes" class="csvg-digit-number"></div>
+            <div id="el_m1t" class="csvg-digit-label" style="color:rgba(71,163,218,0.8);">minutes</div>
+
+        </div>
+        <div class="csvg-digit">
+            <div id="seconds" class="csvg-digit-number"></div>
+            <div id="el_s1t" class="csvg-digit-label" style="color:rgba(71,163,218,0.8);">seconds</div>
+        </div>
+    </div>
+</div>
