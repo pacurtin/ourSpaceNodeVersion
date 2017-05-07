@@ -1,18 +1,28 @@
 html {
-    height:100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-    height:100%;
-    width:100%;
-    position:absolute;
+    margin: 0 0 100px; /* bottom = footer height */
+}
+
+.home-page-body{
+    height: 700px;
 }
 
 header{
-
+    background-color: rgb(58, 124, 164);
 }
 
-footer{
+header a{
+    font-size: 250%;
+    color: rgb(130, 200, 240);
+    margin-right: 10px;
+}
+
+footer {
+    background-color: orange;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -21,9 +31,9 @@ footer{
     overflow:hidden;
 }
 
+
 .left-side-blue{
     height:100%;
-    color: white;
     background:rgba(71,163,218,0.8);
 }
 
@@ -43,15 +53,10 @@ footer{
 
 .weather-app{
     padding-top:100px;
+    z-index: 10;
 }
 
-.body-content {
-    max-width:100%;
-    height:100%;
-    min-height:100%;
-}
-
-.csvg-countdown {
+.countdown {
     position: absolute;
     top: 65%;
     left: 0;
@@ -66,7 +71,7 @@ footer{
     animation-name: fadeIn;
 }
 
-.csvg-digit {
+.digit {
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: center;
@@ -74,7 +79,7 @@ footer{
     margin-right: 4px;
 }
 
-.csvg-digit-number {
+.digit-number {
     font-size: 107px;
     padding: 3px 29px;
     background: #38414a;
@@ -83,7 +88,7 @@ footer{
     font-weight: 300;
 }
 
-.csvg-digit-label {
+.digit-label {
     padding: 5px;
     font-size: 23px;
     text-align: left;
@@ -100,17 +105,4 @@ footer{
 .profile img {
     max-width: 100%;
     border-radius: 50%;
-}
-
-.navbar {
-    background-color: rgb(58, 124, 164);
-    border:none;
-}
-
-.navbar .navbar-brand {
-    color: #fff;
-}
-
-.navbar .navbar-nav > li > a {
-    color: #fff;
 }

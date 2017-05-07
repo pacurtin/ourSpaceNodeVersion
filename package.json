@@ -12,6 +12,7 @@
   "licence": "MIT",
   "dependencies": {
     "angular": "^1.6.3",
+    "angular-cookies": "^1.6.4",
     "angular-route": "^1.6.3",
     "bootstrap": "^3.3.7",
     "express": "^4.15.2",

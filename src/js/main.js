@@ -1,30 +1,25 @@
 /**
  * Main AngularJS Web Application
  */
-var app = angular.module('ourSpaceAngularApp', [
-    'ngRoute'
-]);
+var app = angular.module('ourSpaceAngularApp', ['ngRoute', 'ngCookies']).run(run);
 
 /**
- * Configure the Routes
+ * Authentication stuff
  */
-app.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider
-        .when("/", {templateUrl: "partials/homeBody.html",controller: "PageCtrl"})
-        .when("/pricing", {templateUrl: "partials/pricingBody.html", controller: "PageCtrl"})
-        .when("/services", {templateUrl: "partials/servicesBody.html", controller: "PageCtrl"})
-        .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
-}]);
+run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
+    function run($rootScope, $location, $cookies, $http) {
+        // keep user logged in after page refresh
+        $rootScope.globals = $cookies.getObject('globals') || {};
+        if ($rootScope.globals.currentUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
+        }
 
-app.config(['$locationProvider', function($locationProvider) {
-    $locationProvider.hashPrefix('');
-}]);
-
-/**
- * Controls Pages
- */
-app.controller('PageCtrl', function ( $scope /*, $location, $http */) {
-    console.log("Page Controller reporting for duty.");
-
-
-});
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            // redirect to login page if not logged in and trying to access a restricted page
+            var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
+            var loggedIn = $rootScope.globals.currentUser;
+            if (restrictedPage && !loggedIn) {
+                $location.path('/login');
+            }
+        });
+    }

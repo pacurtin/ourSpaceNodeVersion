@@ -15,12 +15,26 @@
      <!-- Our Website Content Goes Here -->
         <div ng-include='"templates/header.html"'></div>
         <div ng-view></div>
-        <div class = "footer" ng-include='"templates/footer.html"'></div>
+        <!--<div ng-include='"templates/footer.html"'></div>-->
 
 
-        <!-- Our Website Javascripts -->
+        <!-- 3rd party Javascripts -->
         <script src="node_modules/angular/angular.js"></script>
-        <script src="node_modules//angular-route/angular-route.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="node_modules/angular-cookies/angular-cookies.js"></script>
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <!--<script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+        <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>-->
+        <!-- Angular app javascripts -->
         <script src="js/main.js"></script>
+        <script src="js/routes.js"></script>
+        <script src="js/home-body-controller.js"></script>
+        <script src="js/login-controller.js"></script>
+        <script src="js/register-controller.js"></script>
+        <script src="js/countdown-directive.js"></script>
+        <script src="js/dublin-weather-directive.js"></script>
+        <script src="js/brisbane-weather-directive.js"></script>
+        <script src="js/authentication-service.js"></script>
+        <script src="js/fake-user-service.js"></script>
     </body>
 </html>
