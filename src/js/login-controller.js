@@ -5,28 +5,26 @@
         .module('ourSpaceAngularApp')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService'];
-    function LoginController($location, AuthenticationService, FlashService) {
-        var vm = this;
+    LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService', '$scope'];
+    function LoginController($location, AuthenticationService, FlashService, $scope) {
 
-        vm.login = login;
+        console.log("Login Controller reporting for duty.");
 
         (function initController() {
             // reset login status
             AuthenticationService.ClearCredentials();
         })();
 
-        function login() {
-            vm.dataLoading = true;
-            AuthenticationService.Login(vm.username, vm.password, function (response) {
-                if (response.success) {
-                    AuthenticationService.SetCredentials(vm.username, vm.password);
-                    $location.path('/');
-                } else {
-                    FlashService.Error(response.message);
-                    vm.dataLoading = false;
-                }
-            });
+        $scope.user = { "username":"", "password":"" } ;
+        $scope.login = function () {
+                   AuthenticationService.Login($scope.user.username, $scope.user.password, function (response) {
+                       if (response.success) {
+                           AuthenticationService.SetCredentials($scope.user.username, $scope.user.password);
+                           $location.path('/');
+                       } else {
+                           FlashService.Error(response.message);
+                       }
+                   });
         };
     }
 

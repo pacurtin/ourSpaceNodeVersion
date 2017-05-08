@@ -10,10 +10,7 @@
       console.log("Reg Controller reporting for duty.");
 
       $scope.user = { "firstName":"", "lastName":"", "username":"", "password":"" } ;
-      $scope.myTxt = "You have not yet clicked submit";
       $scope.myRegFunc = function () {
-          $scope.myTxt = "You clicked submit!";
-          $scope.dataLoading = true;
           UserService.Create($scope.user)
               .then(function (response) {
                   if (response.success) {
@@ -21,7 +18,6 @@
                       $location.path('/login');
                   } else {
                       FlashService.Error(response.message);
-                      $scope.dataLoading = false;
                   }
               });
 
