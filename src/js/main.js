@@ -1,7 +1,7 @@
 /**
  * Main AngularJS Web Application
  */
-var app = angular.module('ourSpaceAngularApp', ['ngRoute', 'ngCookies']).run(run);
+var app = angular.module('ourSpaceAngularApp', ['ngRoute', 'ngCookies', 'ngFlash']).run(run);
 
 /**
  * Authentication stuff
@@ -23,3 +23,12 @@ run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
             }
         });
     }
+
+/**
+ * Flash message config
+ */
+
+app.config((FlashProvider) => {
+    FlashProvider.setTimeout(2000);
+    FlashProvider.setShowClose(true);
+});
