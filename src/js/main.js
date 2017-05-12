@@ -27,8 +27,8 @@ run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
 /**
  * Flash message config
  */
-
-app.config((FlashProvider) => {
-    FlashProvider.setTimeout(2000);
-    FlashProvider.setShowClose(true);
-});
+//TODO Fix this after studying JS
+//app.config((FlashProvider) => {
+//    FlashProvider.setTimeout(2000);
+//    FlashProvider.setShowClose(true);
+//});
